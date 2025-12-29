@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Rekha's Confectionery - Premium Cake Brand Design System
+   Theme: Minimal, Royal, Luxurious
+   Primary: Deep Burgundy/Wine Red
+   Background: Soft Ivory/Warm White
+*/
+
+@layer base {
+  :root {
+    /* Soft Ivory/Warm White Background */
+    --background: 40 33% 97%;
+    --foreground: 345 25% 15%;
+
+    /* Card - Slightly warmer than background */
+    --card: 40 30% 95%;
+    --card-foreground: 345 25% 15%;
+
+    --popover: 40 33% 97%;
+    --popover-foreground: 345 25% 15%;
+
+    /* Primary - Deep Burgundy/Wine Red */
+    --primary: 345 45% 28%;
+    --primary-foreground: 40 33% 97%;
+
+    /* Secondary - Muted Rose/Blush */
+    --secondary: 350 25% 92%;
+    --secondary-foreground: 345 45% 28%;
+
+    /* Muted - Soft warm gray */
+    --muted: 40 15% 90%;
+    --muted-foreground: 345 10% 45%;
+
+    /* Accent - Subtle gold touch */
+    --accent: 38 40% 85%;
+    --accent-foreground: 345 45% 28%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 40 33% 97%;
+
+    --border: 40 20% 88%;
+    --input: 40 20% 88%;
+    --ring: 345 45% 28%;
+
+    --radius: 0.5rem;
+
+    /* Custom brand colors */
+    --burgundy: 345 45% 28%;
+    --burgundy-light: 345 35% 45%;
+    --ivory: 40 33% 97%;
+    --cream: 40 30% 95%;
+    --blush: 350 25% 92%;
+    --gold: 38 50% 55%;
+    --gold-muted: 38 30% 75%;
+  }
+
+  .dark {
+    --background: 345 25% 8%;
+    --foreground: 40 33% 95%;
+
+    --card: 345 25% 10%;
+    --card-foreground: 40 33% 95%;
+
+    --popover: 345 25% 8%;
+    --popover-foreground: 40 33% 95%;
+
+    --primary: 350 40% 65%;
+    --primary-foreground: 345 25% 8%;
+
+    --secondary: 345 20% 18%;
+    --secondary-foreground: 40 33% 95%;
+
+    --muted: 345 20% 15%;
+    --muted-foreground: 40 20% 65%;
+
+    --accent: 38 35% 25%;
+    --accent-foreground: 40 33% 95%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 40 33% 95%;
+
+    --border: 345 20% 18%;
+    --input: 345 20% 18%;
+    --ring: 350 40% 65%;
+
+    --burgundy: 350 40% 65%;
+    --burgundy-light: 350 35% 75%;
+    --ivory: 40 20% 15%;
+    --cream: 40 15% 12%;
+    --blush: 350 20% 20%;
+    --gold: 38 50% 55%;
+    --gold-muted: 38 30% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .heading-primary {
+    @apply text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .heading-secondary {
+    @apply text-3xl sm:text-4xl font-medium tracking-tight;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .heading-tertiary {
+    @apply text-xl sm:text-2xl font-medium;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .body-large {
+    @apply text-lg sm:text-xl leading-relaxed;
+  }
+
+  .body-regular {
+    @apply text-base leading-relaxed;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-3 bg-primary text-primary-foreground 
+           font-medium rounded-sm transition-all duration-300 hover:opacity-90
+           focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-8 py-3 border border-primary text-primary
+           font-medium rounded-sm transition-all duration-300 hover:bg-primary hover:text-primary-foreground
+           focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+
+  .gold-divider {
+    @apply h-px w-16 mx-auto;
+    background: linear-gradient(90deg, transparent, hsl(var(--gold)), transparent);
+  }
+
+  .card-elegant {
+    @apply bg-card rounded-sm overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
